@@ -22,7 +22,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    Greeting("Rangj Thieeur nawng")
                     Greeting("ddsdsddd")
+
                 }
             }
         }
@@ -41,6 +43,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     ChatApp_DACS3Theme {
-        Greeting("Android")
+        Greeting("Rang Thieu Nang")
     }
 }
