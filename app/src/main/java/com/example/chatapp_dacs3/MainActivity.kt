@@ -23,8 +23,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    Greeting("Rangj Thie HEHEHEHEH fdf eur nawng")
-                    Greeting("Phuc")
+                    Greeting("Phucnonvc")
                 }
             }
         }
