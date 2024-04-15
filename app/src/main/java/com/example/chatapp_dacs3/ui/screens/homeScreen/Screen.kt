@@ -80,7 +80,7 @@ fun Home() {
                 ) {
                     val texts = listOf("Message", "Calls","Contacts", "Settings")
                     val icons = listOf(
-                        painterResource(id = R.drawable.chatbubble),
+                        painterResource(id = R.drawable.chat_bubble),
                         painterResource(id = R.drawable.call),
                         painterResource(id = R.drawable.contacts),
                         painterResource(id = R.drawable.settings)
