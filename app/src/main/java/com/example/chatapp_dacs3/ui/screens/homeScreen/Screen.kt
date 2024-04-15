@@ -1,17 +1,26 @@
 package com.example.chatapp_dacs3.ui.screens.homeScreen
 
+import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,6 +28,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,6 +37,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -35,12 +47,12 @@ import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
 @OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
-fun Home() {
+fun HomeScreen() {
     Scaffold(
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.onSurface,
+                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary,
                 ),
                 modifier = Modifier
@@ -55,11 +67,27 @@ fun Home() {
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ){
-                        RoundIconButton(null,imageVector = Icons.Default.Search) {
+                        RoundIconButton(
+                            null,
+                            imageVector = Icons.Default.Search,
+                            modifier = Modifier
+                                .size(50.dp)
+//                                .border(
+//                                    border = BorderStroke(
+//                                        width = 2.dp, // Border width
+//                                        color = Color.Black // Border color
+//                                    )
+//                                )
+
+                        ) {
 
                         }
-                        Text("Home", color = Color.White)
-                        RoundIconButton(imageResId = R.drawable.newuser,null) {
+                        Text("Home", color = Green1)
+                        RoundIconButton(
+                            imageResId = R.drawable.newuser,
+                            null,
+                            modifier = Modifier.size(50.dp)
+                        ) {
 
                         }
                     }
@@ -76,7 +104,6 @@ fun Home() {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp)
                 ) {
                     val texts = listOf("Message", "Calls","Contacts", "Settings")
                     val icons = listOf(
@@ -85,23 +112,36 @@ fun Home() {
                         painterResource(id = R.drawable.contacts),
                         painterResource(id = R.drawable.settings)
                     )
-
+                    val isClicked = remember {
+                        mutableStateListOf(false, false, false,false)
+                    }
                     for (i in 0 .. 3) {
                         Column(
                             modifier = Modifier
                                 .weight(1f)
-                                .fillMaxHeight(),
+                                .fillMaxHeight()
+                                .clickable() {
+                                    for (j in 0..3) {
+                                        isClicked[j] = false
+                                    }
+                                    isClicked[i] = true
+                                },
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Icon(
                                 painter = icons[i],
                                 contentDescription = null,
-                                tint = Color.Gray,
+                                tint =
+                                    if (isClicked[i]) Green1
+                                    else Color.Gray,
                                 modifier = Modifier.size(37.dp)
                             )
                             Text(text = texts[i],style = TextStyle(fontSize = 10.sp)
-                                , color = Color.Gray)
+                                , color =
+                                    if (isClicked[i]) Green1
+                                    else Color.Gray,
+                            )
                         }
                     }
 
@@ -113,11 +153,39 @@ fun Home() {
             modifier = Modifier
                 .padding(innerPadding),
         ) {
-            Row(modifier = Modifier
-                .fillMaxWidth()
-                .height(70.dp))
-            {
+            ListStatusMyFriend()
+        }
+    }
+}
 
+@Composable
+fun ListStatusMyFriend() {
+    Row(modifier = Modifier
+        .fillMaxWidth()
+        .height(100.dp)
+        .fillMaxWidth()
+        .horizontalScroll(rememberScrollState())
+    )
+
+    {
+        for(i in 0..11){
+            Column (modifier = Modifier
+                .height(100.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ){
+                RoundIconButton(
+                    imageResId = R.drawable.newuser,
+                    null,
+                    modifier = Modifier
+                        .width(78.dp)
+                        .aspectRatio(1f)
+                ) {
+
+                }
+                Text(text = "HPhúc",color = Color.Black,
+                    modifier = Modifier.padding(top = 0.dp),
+                    style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
+                )
             }
         }
     }
@@ -127,45 +195,51 @@ fun Home() {
 fun RoundIconButton(
     imageResId: Int?,
     imageVector: ImageVector?,
-    onClick: () -> Unit
-) {
-    IconButton(
-        onClick = onClick,
-        modifier = Modifier.size(60.dp),
-        content = {
-            Box(
-                modifier = Modifier
-                    .size(60.dp)
-                    .padding(12.dp)
-                    .clip(CircleShape),
-                contentAlignment = Alignment.Center,
-                content = {
-                    if(imageResId != null){
-                        Image(
-                            painter = painterResource(id = imageResId),
-                            contentDescription = "",
-                            modifier = Modifier.size(50.dp)
-                        )
-                    }
-                    else if(imageVector != null){
-                        Icon(
-                            imageVector = imageVector,
-                            contentDescription = "",
-                            tint = Color.White,
-                            modifier = Modifier.size(50.dp)
-                        )
-                    }
-                },
+    modifier: Modifier,
+    onClick: () -> Unit,
 
-                )
-        }
-    )
+) {
+    Box(modifier = Modifier.clip(CircleShape)){
+        IconButton(
+            onClick = onClick,
+            modifier = modifier,
+            content = {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(9.dp)
+                        .clip(shape = CircleShape),
+                    contentAlignment = Alignment.Center,
+                    content = {
+                        if(imageResId != null){
+                            Image(
+                                painter = painterResource(id = imageResId),
+                                contentDescription = "",
+                                modifier = modifier
+                            )
+                        }
+                        else if(imageVector != null){
+                            Icon(
+                                imageVector = imageVector,
+                                contentDescription = "",
+                                tint = Green1,
+                                modifier = modifier
+                            )
+                        }
+                    },
+
+                    )
+            }
+        )
+    }
 }
+
+
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Preview() {
-    ChatApp_DACS3Theme {
-        Home()
+    ChatApp_DACS3Theme() {
+        HomeScreen()
     }
 }

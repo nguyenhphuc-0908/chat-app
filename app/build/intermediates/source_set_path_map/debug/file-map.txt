@@ -38,9 +38,9 @@ com.example.chatapp_dacs3.app-ui-text-release-36 C:\Users\MSI PC\.gradle\caches\
 com.example.chatapp_dacs3.app-ui-unit-release-37 C:\Users\MSI PC\.gradle\caches\transforms-3\f31fb2fc7495caff4f98cb6caf7f971b\transformed\ui-unit-release\res
 com.example.chatapp_dacs3.app-material-release-38 C:\Users\MSI PC\.gradle\caches\transforms-3\fd4835d0a273fe10daf71d02185f24d6\transformed\material-release\res
 com.example.chatapp_dacs3.app-activity-1.8.2-39 C:\Users\MSI PC\.gradle\caches\transforms-3\fdab0ea5bd03d2f6bc9c2d6111f8148e\transformed\activity-1.8.2\res
-com.example.chatapp_dacs3.app-resValues-40 C:\Users\MSI PC\AndroidStudioProjects\ChatApp_DACS3\app\build\generated\res\resValues\debug
-com.example.chatapp_dacs3.app-packageDebugResources-41 C:\Users\MSI PC\AndroidStudioProjects\ChatApp_DACS3\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.chatapp_dacs3.app-packageDebugResources-42 C:\Users\MSI PC\AndroidStudioProjects\ChatApp_DACS3\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.chatapp_dacs3.app-merged_res-43 C:\Users\MSI PC\AndroidStudioProjects\ChatApp_DACS3\app\build\intermediates\merged_res\debug
-com.example.chatapp_dacs3.app-debug-44 C:\Users\MSI PC\AndroidStudioProjects\ChatApp_DACS3\app\src\debug\res
-com.example.chatapp_dacs3.app-main-45 C:\Users\MSI PC\AndroidStudioProjects\ChatApp_DACS3\app\src\main\res
+com.example.chatapp_dacs3.app-resValues-40 C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\build\generated\res\resValues\debug
+com.example.chatapp_dacs3.app-packageDebugResources-41 C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.chatapp_dacs3.app-packageDebugResources-42 C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.chatapp_dacs3.app-merged_res-43 C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\build\intermediates\merged_res\debug
+com.example.chatapp_dacs3.app-debug-44 C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\debug\res
+com.example.chatapp_dacs3.app-main-45 C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\res
