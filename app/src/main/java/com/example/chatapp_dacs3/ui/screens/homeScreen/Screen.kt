@@ -33,8 +33,9 @@ import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
-fun Home(modifier: Modifier = Modifier) {
+fun Home() {
     Scaffold(
         topBar = {
             TopAppBar(
