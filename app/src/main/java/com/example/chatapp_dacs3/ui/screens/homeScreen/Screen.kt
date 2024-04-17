@@ -1,15 +1,15 @@
 package com.example.chatapp_dacs3.ui.screens.homeScreen
 
+import android.content.ContentValues
+import android.util.Log
 import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +20,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -43,11 +42,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 @OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    findUserAction: () -> Unit,
+    ) {
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -60,39 +64,9 @@ fun HomeScreen() {
                     .height(70.dp),
 
                 title = {
-                    Row (
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(end = 15.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ){
-                        RoundIconButton(
-                            null,
-                            imageVector = Icons.Default.Search,
-                            modifier = Modifier
-                                .size(50.dp)
-//                                .border(
-//                                    border = BorderStroke(
-//                                        width = 2.dp, // Border width
-//                                        color = Color.Black // Border color
-//                                    )
-//                                )
-
-                        ) {
-
-                        }
-                        Text("Home", color = Green1)
-                        RoundIconButton(
-                            imageResId = R.drawable.newuser,
-                            null,
-                            modifier = Modifier.size(50.dp)
-                        ) {
-
-                        }
-                    }
-
-
+                    TopBar(
+                        findUserAction = { handleFindUserAction { addUser("Phúc", "D", 2004) } }
+                    )
                 }
             )
         },
@@ -101,51 +75,7 @@ fun HomeScreen() {
                 containerColor = MaterialTheme.colorScheme.surface,
                 contentColor = MaterialTheme.colorScheme.onSurface,
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ) {
-                    val texts = listOf("Message", "Calls","Contacts", "Settings")
-                    val icons = listOf(
-                        painterResource(id = R.drawable.chat_bubble),
-                        painterResource(id = R.drawable.call),
-                        painterResource(id = R.drawable.contacts),
-                        painterResource(id = R.drawable.settings)
-                    )
-                    val isClicked = remember {
-                        mutableStateListOf(false, false, false,false)
-                    }
-                    for (i in 0 .. 3) {
-                        Column(
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxHeight()
-                                .clickable() {
-                                    for (j in 0..3) {
-                                        isClicked[j] = false
-                                    }
-                                    isClicked[i] = true
-                                },
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Icon(
-                                painter = icons[i],
-                                contentDescription = null,
-                                tint =
-                                    if (isClicked[i]) Green1
-                                    else Color.Gray,
-                                modifier = Modifier.size(37.dp)
-                            )
-                            Text(text = texts[i],style = TextStyle(fontSize = 10.sp)
-                                , color =
-                                    if (isClicked[i]) Green1
-                                    else Color.Gray,
-                            )
-                        }
-                    }
-
-                }
+                BottomBar()
             }
         },
     ) { innerPadding ->
@@ -155,6 +85,111 @@ fun HomeScreen() {
         ) {
             ListStatusMyFriend()
         }
+    }
+}
+fun handleFindUserAction(findUserAction: () -> Unit) {
+    // Gọi lambda function tại đây
+    findUserAction()
+    // Thực hiện các hành động khác nếu cần
+
+    // Trả về Unit
+    return Unit
+}
+
+fun addUser(firstName: String, lastName: String, born: Int) {
+    val db = Firebase.firestore
+    val user = hashMapOf(
+        "first" to firstName,
+        "last" to lastName,
+        "born" to born
+    )
+
+    db.collection("users")
+        .add(user)
+        .addOnSuccessListener { documentReference ->
+            Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+        }
+        .addOnFailureListener { e ->
+            Log.w(ContentValues.TAG, "Error adding document", e)
+        }
+}
+
+@Composable
+fun TopBar(
+    findUserAction:()-> Unit?,
+) {
+    Row (
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(end = 15.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ){
+        RoundIconButton(
+            null,
+            imageVector = Icons.Default.Search,
+            modifier = Modifier
+                .size(50.dp),
+        ){
+            findUserAction
+        }
+        Text("Home", color = Green1)
+        RoundIconButton(
+            imageResId = R.drawable.newuser,
+            null,
+            modifier = Modifier.size(50.dp)
+        ) {
+
+        }
+    }
+}
+
+@Composable
+fun BottomBar() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+    ) {
+        val texts = listOf("Message", "Calls","Contacts", "Settings")
+        val icons = listOf(
+            painterResource(id = R.drawable.chat_bubble),
+            painterResource(id = R.drawable.call),
+            painterResource(id = R.drawable.contacts),
+            painterResource(id = R.drawable.settings)
+        )
+        val isClicked = remember {
+            mutableStateListOf(false, false, false,false)
+        }
+        for (i in 0 .. 3) {
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .clickable() {
+                        for (j in 0..3) {
+                            isClicked[j] = false
+                        }
+                        isClicked[i] = true
+                    },
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Icon(
+                    painter = icons[i],
+                    contentDescription = null,
+                    tint =
+                    if (isClicked[i]) Green1
+                    else Color.Gray,
+                    modifier = Modifier.size(37.dp)
+                )
+                Text(text = texts[i],style = TextStyle(fontSize = 10.sp)
+                    , color =
+                    if (isClicked[i]) Green1
+                    else Color.Gray,
+                )
+            }
+        }
+
     }
 }
 
@@ -240,6 +275,7 @@ fun RoundIconButton(
 @Composable
 fun Preview() {
     ChatApp_DACS3Theme() {
-        HomeScreen()
+        HomeScreen { addUser("Phuc", "D", 23) }
     }
 }
+

@@ -4,7 +4,7 @@
             "outputFile": "com.example.chatapp_dacs3.test.app-mergeDebugAndroidTestResources-32:/values-ja/values-ja.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\MSI PC\\.gradle\\caches\\transforms-3\\5b14ded97d255074b3f59a1f689ce72e\\transformed\\ui-release\\res\\values-ja\\values-ja.xml",
+                    "source": "C:\\Users\\MSI PC\\.gradle\\caches\\transforms-3\\9503bcf6dfd5f9a3ac07db12b06eb4ea\\transformed\\ui-release\\res\\values-ja\\values-ja.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\MSI PC\\.gradle\\caches\\transforms-3\\cbc9fc90c45dc44ccf2ca837e2c26226\\transformed\\core-1.12.0\\res\\values-ja\\values-ja.xml",
+                    "source": "C:\\Users\\MSI PC\\.gradle\\caches\\transforms-3\\6f476f7e7b70cffb46c7a4a669fefe1e\\transformed\\core-1.12.0\\res\\values-ja\\values-ja.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
