@@ -1,11 +1,7 @@
 package com.example.chatapp_dacs3.ui.screens.homeScreen
 
-import android.content.ContentValues
-import android.util.Log
 import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -44,8 +40,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 @OptIn(ExperimentalMaterial3Api::class)
 
@@ -140,13 +134,7 @@ fun BottomBar() {
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxHeight()
-                    .clickable() {
-                        for (j in 0..3) {
-                            isClicked[j] = false
-                        }
-                        isClicked[i] = true
-                    },
+                    .fillMaxHeight(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -163,6 +151,10 @@ fun BottomBar() {
                     if (isClicked[i]) Green1
                     else Color.Gray,
                 )
+                for (j in 0..3) {
+                    isClicked[j] = false
+                }
+                isClicked[i] = true
             }
         }
 
@@ -224,7 +216,7 @@ fun OneChatFriend() {
 fun TimeAgoChat(
     text: String
 ) {
-    Text(text = text+" ago",
+    Text(text = "$text ago",
         style = TextStyle(fontSize = 8.sp,
             fontWeight = FontWeight.W300
         ),
@@ -236,6 +228,7 @@ fun ListMyChat() {
     Column (
         modifier = Modifier
             .fillMaxSize()
+            .padding()
     ){
         for(i in 0..10){
         OneChatFriend()
@@ -287,7 +280,7 @@ fun ListStatusMyFriend() {
                         .width(70.dp)
                         .aspectRatio(1f)
                 ) {}
-                Text(text = "HPhúc",color = Color.Black,
+                Text(text = "HPhúc",
                     modifier = Modifier.padding(top = 0.dp),
                     style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                 )
@@ -339,13 +332,9 @@ fun RoundIconButton(
     }
 }
 
-
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Preview() {
-    ChatApp_DACS3Theme() {
-        HomeScreen ()
-    }
+    HomeScreen ()
 }
 
