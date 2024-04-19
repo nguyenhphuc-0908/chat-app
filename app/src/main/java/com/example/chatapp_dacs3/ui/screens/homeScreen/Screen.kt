@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.util.Log
 import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -20,6 +21,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -48,10 +50,7 @@ import com.google.firebase.ktx.Firebase
 @OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
-fun HomeScreen(
-    findUserAction: () -> Unit,
-    ) {
-
+fun HomeScreen() {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -65,7 +64,8 @@ fun HomeScreen(
 
                 title = {
                     TopBar(
-                        findUserAction = { handleFindUserAction { addUser("Phúc", "D", 2004) } }
+                        findUserAction = {
+                        }
                     )
                 }
             )
@@ -81,42 +81,19 @@ fun HomeScreen(
     ) { innerPadding ->
         Column(
             modifier = Modifier
-                .padding(innerPadding),
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState()),
         ) {
             ListStatusMyFriend()
+            ListMyChat()
         }
     }
 }
-fun handleFindUserAction(findUserAction: () -> Unit) {
-    // Gọi lambda function tại đây
-    findUserAction()
-    // Thực hiện các hành động khác nếu cần
 
-    // Trả về Unit
-    return Unit
-}
-
-fun addUser(firstName: String, lastName: String, born: Int) {
-    val db = Firebase.firestore
-    val user = hashMapOf(
-        "first" to firstName,
-        "last" to lastName,
-        "born" to born
-    )
-
-    db.collection("users")
-        .add(user)
-        .addOnSuccessListener { documentReference ->
-            Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-        }
-        .addOnFailureListener { e ->
-            Log.w(ContentValues.TAG, "Error adding document", e)
-        }
-}
 
 @Composable
 fun TopBar(
-    findUserAction:()-> Unit?,
+    findUserAction: () -> Unit,
 ) {
     Row (
         modifier = Modifier
@@ -130,9 +107,8 @@ fun TopBar(
             imageVector = Icons.Default.Search,
             modifier = Modifier
                 .size(50.dp),
-        ){
-            findUserAction
-        }
+            onClick = findUserAction,
+        )
         Text("Home", color = Green1)
         RoundIconButton(
             imageResId = R.drawable.newuser,
@@ -194,6 +170,102 @@ fun BottomBar() {
 }
 
 @Composable
+fun OneChatFriend() {
+    Row (modifier = Modifier
+        .fillMaxWidth()
+        .padding(start = 15.dp, end = 15.dp)
+        .height(75.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ){
+//        Avatar
+        Column (
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(70.dp),
+                verticalArrangement = Arrangement.Center
+        ){
+            RoundIconButton(
+                imageResId = R.drawable.newuser,
+                null,
+                modifier = Modifier
+                    .width(65.dp)
+                    .aspectRatio(1f)
+            ) {}
+        }
+//        Other
+        Column (
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center
+        ){
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+
+            ){
+                TextNameUser("Phuc Is Me")
+                TimeAgoChat("32p")
+            }
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ){
+                TextChat("Hello, How are you?")
+            }
+        }
+    }
+}
+
+@Composable
+fun TimeAgoChat(
+    text: String
+) {
+    Text(text = text+" ago",
+        style = TextStyle(fontSize = 8.sp,
+            fontWeight = FontWeight.W300
+        ),
+        maxLines = 1)
+}
+
+@Composable
+fun ListMyChat() {
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+    ){
+        for(i in 0..10){
+        OneChatFriend()
+    }
+    }
+}
+
+@Composable
+fun TextNameUser(
+    name: String
+) {
+    Text(text = name,
+        style = TextStyle(fontSize = 20.sp,
+            fontWeight = FontWeight.Medium
+        ),
+        maxLines = 1,
+    )
+}
+
+@Composable
+fun TextChat(
+    text: String
+) {
+    Text(text = text,
+        style = TextStyle(fontSize = 15.sp,
+        )
+    )
+}
+
+@Composable
 fun ListStatusMyFriend() {
     Row(modifier = Modifier
         .fillMaxWidth()
@@ -212,11 +284,9 @@ fun ListStatusMyFriend() {
                     imageResId = R.drawable.newuser,
                     null,
                     modifier = Modifier
-                        .width(78.dp)
+                        .width(70.dp)
                         .aspectRatio(1f)
-                ) {
-
-                }
+                ) {}
                 Text(text = "HPhúc",color = Color.Black,
                     modifier = Modifier.padding(top = 0.dp),
                     style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
@@ -275,7 +345,7 @@ fun RoundIconButton(
 @Composable
 fun Preview() {
     ChatApp_DACS3Theme() {
-        HomeScreen { addUser("Phuc", "D", 23) }
+        HomeScreen ()
     }
 }
 
