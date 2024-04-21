@@ -1,10 +1,8 @@
 package com.example.chatapp_dacs3.ui.screens.homeScreen
 
 import com.example.chatapp_dacs3.ui.theme.Green1
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
@@ -16,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.*
 import androidx.compose.material.icons.filled.*
@@ -29,9 +26,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -39,7 +34,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chatapp_dacs3.R
-import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
+import com.example.chatapp_dacs3.ui.components.RoundIconButton
+import com.example.chatapp_dacs3.ui.components.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 
@@ -236,27 +232,7 @@ fun ListMyChat() {
     }
 }
 
-@Composable
-fun TextNameUser(
-    name: String
-) {
-    Text(text = name,
-        style = TextStyle(fontSize = 20.sp,
-            fontWeight = FontWeight.Medium
-        ),
-        maxLines = 1,
-    )
-}
 
-@Composable
-fun TextChat(
-    text: String
-) {
-    Text(text = text,
-        style = TextStyle(fontSize = 15.sp,
-        )
-    )
-}
 
 @Composable
 fun ListStatusMyFriend() {
@@ -289,48 +265,7 @@ fun ListStatusMyFriend() {
     }
 }
 
-@Composable
-fun RoundIconButton(
-    imageResId: Int?,
-    imageVector: ImageVector?,
-    modifier: Modifier,
-    onClick: () -> Unit,
 
-) {
-    Box(modifier = Modifier.clip(CircleShape)){
-        IconButton(
-            onClick = onClick,
-            modifier = modifier,
-            content = {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(9.dp)
-                        .clip(shape = CircleShape),
-                    contentAlignment = Alignment.Center,
-                    content = {
-                        if(imageResId != null){
-                            Image(
-                                painter = painterResource(id = imageResId),
-                                contentDescription = "",
-                                modifier = modifier
-                            )
-                        }
-                        else if(imageVector != null){
-                            Icon(
-                                imageVector = imageVector,
-                                contentDescription = "",
-                                tint = Green1,
-                                modifier = modifier
-                            )
-                        }
-                    },
-
-                    )
-            }
-        )
-    }
-}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
