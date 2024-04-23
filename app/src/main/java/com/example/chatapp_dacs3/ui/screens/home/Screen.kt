@@ -1,5 +1,6 @@
-package com.example.chatapp_dacs3.ui.screens.homeScreen
+package com.example.chatapp_dacs3.ui.screens.home
 
+import androidx.compose.foundation.clickable
 import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,7 +42,9 @@ import com.example.chatapp_dacs3.ui.components.*
 @OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    openFriendChat:() -> Unit
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -74,8 +78,20 @@ fun HomeScreen() {
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState()),
         ) {
-            ListStatusMyFriend()
-            ListMyChat()
+            val friends = listOf(
+                Friend(R.drawable.newuser, "Nguyen Pđhuc"),
+                Friend(R.drawable.newuser, "MThuong"),
+                Friend(R.drawable.newuser, "TD"),
+                Friend(R.drawable.newuser, "WD de dfddfdfd"),
+                Friend(R.drawable.newuser, "Ton Lu De Tien"),
+                Friend(R.drawable.newuser, "May Co Biet Tao La Ai Khong"),
+                Friend(R.drawable.newuser, "PhucIs Me"),
+                Friend(R.drawable.newuser, "EEEEEE"),
+                Friend(R.drawable.newuser, "DDDDg"),
+
+            )
+            ListStatusMyFriend(friends)
+            ListMyChat(openFriendChat = openFriendChat)
         }
     }
 }
@@ -130,7 +146,13 @@ fun BottomBar() {
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxHeight(),
+                    .fillMaxHeight()
+                    .clickable() {
+                        for (j in 0..3) {
+                            isClicked[j] = false
+                        }
+                        isClicked[i] = true
+                    },
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -147,10 +169,6 @@ fun BottomBar() {
                     if (isClicked[i]) Green1
                     else Color.Gray,
                 )
-                for (j in 0..3) {
-                    isClicked[j] = false
-                }
-                isClicked[i] = true
             }
         }
 
@@ -158,9 +176,18 @@ fun BottomBar() {
 }
 
 @Composable
-fun OneChatFriend() {
+fun OneChatFriend(
+    avatar: Int?,
+    name: String,
+    lastMessage: String,
+    lastTimeMessage: String,
+    openFriendChat: () -> Unit
+) {
     Row (modifier = Modifier
         .fillMaxWidth()
+        .clickable(){
+            openFriendChat()
+        }
         .padding(start = 15.dp, end = 15.dp)
         .height(75.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -173,7 +200,7 @@ fun OneChatFriend() {
                 verticalArrangement = Arrangement.Center
         ){
             RoundIconButton(
-                imageResId = R.drawable.newuser,
+                imageResId = avatar,
                 null,
                 modifier = Modifier
                     .width(65.dp)
@@ -193,8 +220,8 @@ fun OneChatFriend() {
                 horizontalArrangement = Arrangement.SpaceBetween
 
             ){
-                TextNameUser("Phuc Is Me")
-                TimeAgoChat("32p")
+                TextNameUser(name)
+                TimeAgoChat(lastTimeMessage)
             }
             Row (
                 modifier = Modifier
@@ -202,7 +229,7 @@ fun OneChatFriend() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ){
-                TextChat("Hello, How are you?")
+                TextChat(lastMessage)
             }
         }
     }
@@ -220,56 +247,68 @@ fun TimeAgoChat(
 }
 
 @Composable
-fun ListMyChat() {
+fun ListMyChat(
+    openFriendChat: () -> Unit
+) {
     Column (
         modifier = Modifier
             .fillMaxSize()
             .padding()
     ){
         for(i in 0..10){
-        OneChatFriend()
-    }
+        OneChatFriend(
+            avatar = R.drawable.newuser,
+            name = "Phuc is Me",
+            lastMessage = "Wtf, you are",
+            lastTimeMessage = "34",
+            openFriendChat = openFriendChat
+            )
+        }
     }
 }
 
-
+@Composable
+fun FriendList(friends: List<Friend>) {
+    friends.forEach {friend->
+        Column (modifier = Modifier
+            .height(100.dp)
+            .width(80.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ){
+            RoundIconButton(
+                imageResId = friend.avatar,
+                null,
+                modifier = Modifier
+                    .width(70.dp)
+                    .aspectRatio(1f)
+            ) {}
+            Text(text = friend.name,
+                modifier = Modifier.padding(top = 0.dp),
+                style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.SemiBold),
+                textAlign = TextAlign.Center,
+                maxLines = 1,
+            )
+        }
+    }
+}
 
 @Composable
-fun ListStatusMyFriend() {
+fun ListStatusMyFriend(
+    friends: List<Friend>
+) {
     Row(modifier = Modifier
         .fillMaxWidth()
         .height(100.dp)
         .fillMaxWidth()
         .horizontalScroll(rememberScrollState())
-    )
-
-    {
-        for(i in 0..11){
-            Column (modifier = Modifier
-                .height(100.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                RoundIconButton(
-                    imageResId = R.drawable.newuser,
-                    null,
-                    modifier = Modifier
-                        .width(70.dp)
-                        .aspectRatio(1f)
-                ) {}
-                Text(text = "HPhúc",
-                    modifier = Modifier.padding(top = 0.dp),
-                    style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
-                )
-            }
-        }
+    ) {
+        FriendList(friends = friends)
     }
 }
-
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Preview() {
-    HomeScreen ()
+    HomeScreen (openFriendChat = {})
 }
 

@@ -1,2 +1,8 @@
-package com.example.chatapp_dacs3.ui.screens.homeScreen
+package com.example.chatapp_dacs3.ui.screens.home
+
+
+
+
+
+
 
