@@ -1,5 +1,8 @@
 package com.example.chatapp_dacs3.ui.screens.message
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,14 +14,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -33,9 +32,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.ui.components.RoundIconButton
 import com.example.chatapp_dacs3.ui.components.TextChat
@@ -45,26 +47,46 @@ import com.example.chatapp_dacs3.ui.components.TextNameUser
 @Composable
 fun MessageScreen() {
     val text  = remember{ mutableStateOf("") }
+
     Scaffold(
         topBar = {
+
+
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
+                    containerColor = MaterialTheme.colorScheme.onTertiary,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface,
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(70.dp),
-
+                    .height(70.dp)
+                    .padding(0.dp)
+                ,
                 title = {
                     TopBarMes()
+                },
+                navigationIcon = {
+                    RoundIconButton(
+                        null,
+                        imageVector = Icons.Default.ArrowBack,
+                        modifier = Modifier
+                            .fillMaxHeight(),
+                        onClick = {
+//                            navController.popBackStack()
+                        },
+                    )
                 }
             )
         },
         bottomBar = {
             BottomAppBar(
-                containerColor = MaterialTheme.colorScheme.surface,
+                containerColor = MaterialTheme.colorScheme.onTertiary,
                 contentColor = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier
+                    .border(border = BorderStroke(
+                        width = 0.1.dp, color = Color.Gray
+                    )
+                )
             ) {
                 BottomBarMes(text = text)
             }
@@ -79,23 +101,25 @@ fun MessageScreen() {
     }
 }
 
+
+
 @Composable
-fun TopBarMes() {
+fun TopBarMes(
+) {
     Row (modifier = Modifier
-        .fillMaxSize(),
+        .fillMaxWidth()
+        .padding(0.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ){
         Row (
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(270.dp)
+                .clickable(){},
             verticalAlignment = Alignment.CenterVertically
         ){
-            RoundIconButton(
-                null,
-                imageVector = Icons.Default.ArrowBack,
-                modifier = Modifier
-                    .size(40.dp),
-                onClick = {},
-            )
+
             RoundIconButton(
                 imageResId = R.drawable.newuser,
                 null,
@@ -112,20 +136,14 @@ fun TopBarMes() {
         Row (
             modifier = Modifier
                 .fillMaxHeight()
-                .width(100.dp),
-            verticalAlignment = Alignment.CenterVertically
+                .width(50.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceEvenly
         ){
             RoundIconButton(
-                imageResId = null,
-                imageVector = Icons.Default.Phone,
-                modifier = Modifier.size(45.dp)
-            ) {
-
-            }
-            RoundIconButton(
-                imageResId = null,
-                imageVector = Icons.Default.Info,
-                modifier = Modifier.size(45.dp)
+                imageResId = R.drawable.info,
+                imageVector = null,
+                modifier = Modifier.size(50.dp)
             ) {
 
             }
@@ -135,18 +153,23 @@ fun TopBarMes() {
 
 @Composable
 fun BottomBarMes(
-    text: MutableState<String>
+    text: MutableState<String>,
 ) {
     Row(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(7.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
+            .fillMaxWidth()
+            .height(50.dp)
+            .padding(top = 5.dp)
+            ,
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
     ){
         RoundIconButton(
             imageResId = R.drawable.file,
             imageVector = null,
-            modifier = Modifier.size(47.dp)
+            modifier = Modifier
+                .size(47.dp)
+                .rotate(15f)
         ) {
         }
 
@@ -168,30 +191,46 @@ fun BottomBarMes(
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun TextfieldChatbox(
-    text: MutableState<String>
+    text: MutableState<String>,
 ) {
+//    TextField(
+//        value = text.value,
+//        onValueChange = {
+//            text.value = it
+//        },
+//        shape = RoundedCornerShape(15.dp),
+//        modifier = Modifier
+//            .fillMaxHeight()
+//            .width(230.dp)
+//            .padding(vertical = 7.dp)
+//        ,
+//        colors = TextFieldDefaults.colors(
+//            focusedIndicatorColor = Color.Transparent,
+//            unfocusedIndicatorColor = Color.Transparent,
+//            ),
+//    )
     TextField(
         value = text.value,
         onValueChange = {
             text.value = it
         },
-        modifier = Modifier.size(220.dp, 45.dp),
+        modifier = Modifier
+            .width(220.dp),
+        shape = RoundedCornerShape(8.dp),
         colors = TextFieldDefaults.colors(
-            focusedIndicatorColor = Color.Transparent,
-            unfocusedIndicatorColor = Color.Transparent,
-            unfocusedLabelColor = Color.Black,
-        ),
-        shape = RoundedCornerShape(15.dp)
+        focusedIndicatorColor =  Color.Transparent, //hide the indicator
+        unfocusedIndicatorColor = Color.Transparent
+        )
     )
 
-}
 
+}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun MesPreview() {
-        MessageScreen ()
+        MessageScreen()
 }
