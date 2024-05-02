@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"வழிசெலுத்தல் மெனுவை மூடும்"</string>
     <string msgid="7573152094250666567" name="close_sheet">"ஷீட்டை மூடும்"</string>
     <string msgid="5389587048670450460" name="collapsed">"சுருக்கப்பட்டது"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">இயக்கு</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play சேவைகளை இயக்கினால் மட்டுமே, %1$s செயல்படும்.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play சேவைகளை இயக்கவும்</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">மொபைலில் திற</string>
     <string name="common_signin_button_text">உள்நுழைக</string>
     <string name="common_signin_button_text_long">Google மூலம் உள்நுழைக</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"உள்ளிட்ட தேதி"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"உள்ளிட்ட தேதி: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"எதிர்பார்க்கப்படும் பேட்டர்னுடன் தேதி பொருந்தவில்லை: %1$s"</string>

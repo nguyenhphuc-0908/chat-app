@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Sule navigeerimismenüü"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Sule leht"</string>
     <string msgid="5389587048670450460" name="collapsed">"Ahendatud"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Luba</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Rakendus %1$s töötab ainult siis, kui lubate Google Play teenused.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play teenuste lubamine</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Ava telefonis</string>
     <string name="common_signin_button_text">Logi sisse</string>
     <string name="common_signin_button_text_long">Logi sisse Google\'i kontoga</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Sisestatud kuupäev"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Sisestatud kuupäev: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Kuupäev ei ühti eeldatud mustriga: %1$s"</string>

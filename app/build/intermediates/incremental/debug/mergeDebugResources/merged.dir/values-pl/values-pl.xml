@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Zamknij menu nawigacyjne"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Zamknij arkusz"</string>
     <string msgid="5389587048670450460" name="collapsed">"Zwinięte"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Włącz</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Aplikacja %1$s nie będzie działać, jeśli nie włączysz Usług Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Włącz Usługi Google Play</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Otwórz na telefonie</string>
     <string name="common_signin_button_text">Zaloguj się</string>
     <string name="common_signin_button_text_long">Zaloguj się przez Google</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Wprowadzono datę"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Wprowadzono datę: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Data nie pasuje do oczekiwanego wzorca: %1$s"</string>

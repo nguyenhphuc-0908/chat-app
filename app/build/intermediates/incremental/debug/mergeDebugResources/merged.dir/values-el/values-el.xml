@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Κλείσιμο του μενού πλοήγησης"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Κλείσιμο φύλλου"</string>
     <string msgid="5389587048670450460" name="collapsed">"Συμπτυγμένο"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Ενεργοποίηση</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Η εφαρμογή %1$s δεν θα λειτουργήσει εάν δεν έχετε ενεργοποιήσει τις υπηρεσίες Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Ενεργοποίηση υπηρεσιών Google Play</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Άνοιγμα σε τηλέφωνο</string>
     <string name="common_signin_button_text">Σύνδεση</string>
     <string name="common_signin_button_text_long">Συνδεθείτε με το Google</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Εισαγωγή ημερομηνίας"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Εισαγωγή ημερομηνίας: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Η ημερομηνία δεν αντιστοιχεί στο αναμενόμενο μοτίβο: %1$s"</string>

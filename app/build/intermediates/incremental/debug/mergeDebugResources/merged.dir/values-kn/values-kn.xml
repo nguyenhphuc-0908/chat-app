@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"ನ್ಯಾವಿಗೇಷನ್‌ ಮೆನು ಮುಚ್ಚಿರಿ"</string>
     <string msgid="7573152094250666567" name="close_sheet">"ಶೀಟ್ ಮುಚ್ಚಿರಿ"</string>
     <string msgid="5389587048670450460" name="collapsed">"ಕುಗ್ಗಿಸಲಾಗಿದೆ"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ಸಕ್ರಿಯಗೊಳಿಸು</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play ಸೇವೆಗಳನ್ನು ನೀವು ಸಕ್ರಿಯಗೊಳಿಸದ ಹೊರತು %1$s ಕಾರ್ಯನಿರ್ವಹಿಸುವುದಿಲ್ಲ.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play ಸೇವೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">ಫೋನ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ</string>
     <string name="common_signin_button_text">ಸೈನ್ ಇನ್</string>
     <string name="common_signin_button_text_long">Google ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡಿ</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"ನಮೂದಿಸಿದ ದಿನಾಂಕ"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"ನಮೂದಿಸಿದ ದಿನಾಂಕ: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"ನಿರೀಕ್ಷಿಸಿದ ಪ್ಯಾಟರ್ನ್‌ನೊಂದಿಗೆ ದಿನಾಂಕ ಹೊಂದಾಣಿಕೆಯಾಗುತ್ತಿಲ್ಲ: %1$s"</string>

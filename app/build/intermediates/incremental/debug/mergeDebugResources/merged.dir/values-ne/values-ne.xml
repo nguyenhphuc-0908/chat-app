@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"नेभिगेसन मेनु बन्द गर्नुहोस्"</string>
     <string msgid="7573152094250666567" name="close_sheet">"पाना बन्द गर्नुहोस्"</string>
     <string msgid="5389587048670450460" name="collapsed">"कोल्याप्स गरियो"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">सक्रिय गर्नुहोस्</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s ले तपाईँले Google Play सेवाहरू सक्षम नगरेसम्म काम गर्दैन।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play सेवाहरू सक्षम पार्नुहोस्</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">फोनमा खोल्नुहोस्</string>
     <string name="common_signin_button_text">साइन इन गर्नुहोस्</string>
     <string name="common_signin_button_text_long">Google मार्फत साइन‍ इन गर्नुहोस्</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"हालिएको मिति"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"हालिएको मिति: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"हालिएको मितिको ढाँचा अपेक्षित ढाँचासँग मिलेन: %1$s"</string>

@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਬੰਦ ਕਰੋ"</string>
     <string msgid="7573152094250666567" name="close_sheet">"ਸ਼ੀਟ ਬੰਦ ਕਰੋ"</string>
     <string msgid="5389587048670450460" name="collapsed">"ਸਮੇਟਿਆ ਗਿਆ"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ਚਾਲੂ ਕਰੋ</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s ਕੰਮ ਨਹੀਂ ਕਰੇਗਾ ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ Google Play ਸੇਵਾਵਾਂ ਨੂੰ ਚਾਲੂ ਨਹੀਂ ਕਰਦੇ ਹੋ।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play ਸੇਵਾਵਾਂ ਨੂੰ ਚਾਲੂ ਕਰੋ</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">ਫ਼ੋਨ \'ਤੇ ਖੋਲ੍ਹੋ</string>
     <string name="common_signin_button_text">ਸਾਈਨ-ਇਨ ਕਰੋ</string>
     <string name="common_signin_button_text_long">Google ਨਾਲ ਸਾਈਨ-ਇਨ ਕਰੋ</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"ਦਾਖਲ ਕੀਤੀ ਗਈ ਤਾਰੀਖ"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"ਦਾਖਲ ਕੀਤੀ ਗਈ ਤਾਰੀਖ: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"ਤਾਰੀਖ ਸੰਭਾਵਿਤ ਪੈਟਰਨ ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ: %1$s"</string>

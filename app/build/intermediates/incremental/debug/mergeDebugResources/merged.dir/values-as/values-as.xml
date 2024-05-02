@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"নেভিগেশ্বন মেনু বন্ধ কৰক"</string>
     <string msgid="7573152094250666567" name="close_sheet">"শ্বীট বন্ধ কৰক"</string>
     <string msgid="5389587048670450460" name="collapsed">"সংকোচন কৰা আছে"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">সক্ষম কৰক</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">আপুনি Google Play সেৱাবোৰ সক্ষম নকৰালৈকে %1$sএ কাম নকৰিব।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google প্লে সেৱাসক্ষম কৰক</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">ফ\'নত খোলক</string>
     <string name="common_signin_button_text">ছাইন ইন কৰক</string>
     <string name="common_signin_button_text_long">Googleৰ জৰিয়তে ছাইন ইন কৰক</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"দিয়া তাৰিখ"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"দিয়া তাৰিখ: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"তাৰিখটো এই প্ৰত্যাশিত আৰ্হিটোৰ সৈতে মিলা নাই: %1$s"</string>

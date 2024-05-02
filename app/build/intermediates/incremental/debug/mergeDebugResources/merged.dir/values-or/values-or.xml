@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"ନାଭିଗେସନ୍ ମେନୁ ବନ୍ଦ କରନ୍ତୁ"</string>
     <string msgid="7573152094250666567" name="close_sheet">"ସିଟ୍ ବନ୍ଦ କରନ୍ତୁ"</string>
     <string msgid="5389587048670450460" name="collapsed">"ସଙ୍କୁଚିତ କରାଯାଇଛି"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ସକ୍ଷମ କରନ୍ତୁ</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">ଆପଣ Google Play ସେବା ସକ୍ଷମ ନ କରିବା ପର୍ଯ୍ୟନ୍ତ %1$s କାମ କରିବ ନାହିଁ।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play ସେବାଗୁଡ଼ିକ ସକ୍ଷମ କରନ୍ତୁ</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">ଫୋନ୍‌ରେ ଖୋଲନ୍ତୁ</string>
     <string name="common_signin_button_text">ସାଇନ୍‌-ଇନ୍ କରନ୍ତୁ</string>
     <string name="common_signin_button_text_long">Google ସହ ସାଇନ୍‌-ଇନ୍ କରନ୍ତୁ</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"ଲେଖାଯାଇଥିବା ତାରିଖ"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"ଲେଖାଯାଇଥିବା ତାରିଖ: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"ଆଶା କରାଯାଉଥିବା ପାଟର୍ନ ସହ ତାରିଖ ମେଳ ହେଉନାହିଁ: %1$s"</string>

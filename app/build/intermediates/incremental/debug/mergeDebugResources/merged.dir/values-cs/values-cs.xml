@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Zavřít navigační panel"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Zavřít sešit"</string>
     <string msgid="5389587048670450460" name="collapsed">"Sbaleno"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Povolit</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Ke spuštění aplikace %1$s je třeba aktivovat služby Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Aktivace služeb Google Play</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Otevřít v telefonu</string>
     <string name="common_signin_button_text">Přihlásit se</string>
     <string name="common_signin_button_text_long">Přihlásit se k účtu Google</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Zadané datum"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Zadané datum: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Datum neodpovídá očekávanému vzoru: %1$s"</string>

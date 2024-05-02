@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Close navigation menu"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Close sheet"</string>
     <string msgid="5389587048670450460" name="collapsed">"Collapsed"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign In</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Entered date"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Entered date: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Date does not match expected pattern: %1$s"</string>

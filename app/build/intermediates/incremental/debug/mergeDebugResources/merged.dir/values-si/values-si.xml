@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"සංචාලන මෙනුව වසන්න"</string>
     <string msgid="7573152094250666567" name="close_sheet">"පත්‍රය වසන්න"</string>
     <string msgid="5389587048670450460" name="collapsed">"හකුළන ලදි"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">සබල කරන්න</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">ඔබ Google Play සේවා සබල කරන්නේ නම් මිස %1$s වැඩ නොකරනු ඇත.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play සේවා සබල කරන්න</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">දුරකථනය තුළ විවෘත කරන්න</string>
     <string name="common_signin_button_text">පුරන්න</string>
     <string name="common_signin_button_text_long">Google සමගින් පුරන්න</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"ඇතුළු කළ දිනය"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"එක් කරන්න: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"දිනය අපේක්ෂිත රටාවට නොගැළපෙයි: %1$s"</string>

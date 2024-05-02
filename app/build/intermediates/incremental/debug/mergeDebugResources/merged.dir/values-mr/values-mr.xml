@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"नेव्हिगेशन मेनू बंद करा"</string>
     <string msgid="7573152094250666567" name="close_sheet">"शीट बंद करा"</string>
     <string msgid="5389587048670450460" name="collapsed">"कोलॅप्स केला"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">सुरू करा</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">तुम्ही Google Play सेवा सक्षम केल्याशिवाय %1$s हा अ‍ॅप कार्य करणार नाही.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play सेवा सुरू करा</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">फोनवर उघडा</string>
     <string name="common_signin_button_text">साइन इन करा</string>
     <string name="common_signin_button_text_long">Google सह साइन इन करा</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"एंटर केलेली तारीख"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"एंटर केली तारीख: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"तारीख ही अपेक्षित पॅटर्नशी जुळत नाही: %1$s"</string>

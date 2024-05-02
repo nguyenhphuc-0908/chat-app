@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Gezinme menüsünü kapat"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Sayfayı kapat"</string>
     <string msgid="5389587048670450460" name="collapsed">"Daraltılmış"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Etkinleştir</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play hizmetlerini etkinleştirmezseniz %1$s çalışmaz.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play hizmetlerini etkinleştirin</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Telefonda aç</string>
     <string name="common_signin_button_text">Oturum aç</string>
     <string name="common_signin_button_text_long">Google\'da oturum aç</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Girilen tarih"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Girilen tarih: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Tarih, istenen biçimle eşleşmiyor: %1$s"</string>

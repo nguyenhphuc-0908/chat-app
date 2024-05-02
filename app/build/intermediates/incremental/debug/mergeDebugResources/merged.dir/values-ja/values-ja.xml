@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"ナビゲーションメニューを閉じる"</string>
     <string msgid="7573152094250666567" name="close_sheet">"シートを閉じる"</string>
     <string msgid="5389587048670450460" name="collapsed">"閉じています"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">有効にする</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$sの実行には、Google Play開発者サービスの有効化が必要です。</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play開発者サービスの有効化</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">スマートフォンで開く</string>
     <string name="common_signin_button_text">ログイン</string>
     <string name="common_signin_button_text_long">Googleにログイン</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"入力された日付"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"入力された日付: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"想定されるパターンと日付が一致しません: %1$s"</string>

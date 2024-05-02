@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Tutup menu navigasi"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Tutup helaian"</string>
     <string msgid="5389587048670450460" name="collapsed">"Dikuncupkan"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Dayakan</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s tidak akan berfungsi melainkan anda mendayakan perkhidmatan Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Dayakan perkhidmatan Google Play</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Buka pada telefon</string>
     <string name="common_signin_button_text">Log masuk</string>
     <string name="common_signin_button_text_long">Log masuk dengan Google</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Tarikh yang dimasukkan"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Tarikh yang dimasukkan: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Tarikh tidak sepadan dengan corak yang dijangkakan: %1$s"</string>

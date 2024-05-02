@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"Stäng navigeringsmenyn"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Stäng kalkylarket"</string>
     <string msgid="5389587048670450460" name="collapsed">"Komprimerad"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktivera</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s fungerar inte om du inte aktiverar Google Play-tjänster.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Aktivera Google Play-tjänster</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">Öppna på mobilen</string>
     <string name="common_signin_button_text">Logga in</string>
     <string name="common_signin_button_text_long">Logga in med Google</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"Angivet datum"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"Angivet datum: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"Datumet matchar inte det förväntade formatet: %1$s"</string>

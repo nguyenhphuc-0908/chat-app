@@ -14,6 +14,7 @@
     <string msgid="406453423630273620" name="close_drawer">"نیویگیشن مینیو بند کریں"</string>
     <string msgid="7573152094250666567" name="close_sheet">"شیٹ بند کریں"</string>
     <string msgid="5389587048670450460" name="collapsed">"سکیڑا گیا"</string>
+<<<<<<< HEAD
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">فعال کریں</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">‏جب تک آپ Google Play سروسز فعال نہیں کر لیتے، %1$s کام نہیں کرے گی۔</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">‏Google Play سروسز فعال کریں</string>
@@ -32,6 +33,8 @@
     <string name="common_open_on_phone">فون پر کھولیں</string>
     <string name="common_signin_button_text">سائن ان کریں</string>
     <string name="common_signin_button_text_long">‏Google کے ساتھ سائن ان کریں</string>
+=======
+>>>>>>> SignBranch
     <string msgid="3499643850558715142" name="date_input_headline">"درج کردہ تاریخ"</string>
     <string msgid="8562356184193964298" name="date_input_headline_description">"‏درج کردہ تاریخ: %1$s"</string>
     <string msgid="5281836720766682161" name="date_input_invalid_for_pattern">"‏تاریخ متوقع پیٹرن سے مماثل نہیں ہے: %1$s"</string>
