@@ -1,8 +1,6 @@
 package com.example.chatapp_dacs3
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,10 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.chatapp_dacs3.ui.screens.homeScreen.HomeScreen
 import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +35,9 @@ fun Main() {
         ) {
             NavHost(navController = navController, startDestination = "home" ){
                 composable("home"){
-
+                    navController.navigate("friend")
                 }
+
             }
         }
     }

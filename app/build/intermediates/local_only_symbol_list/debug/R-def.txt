@@ -8,10 +8,14 @@ color teal_200
 color teal_700
 color white
 drawable call
+drawable camera
 drawable chat_bubble
 drawable contacts
+drawable file
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable info
+drawable mic
 drawable newuser
 drawable settings
 mipmap ic_launcher
