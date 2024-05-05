@@ -1,5 +1,6 @@
 package com.example.chatapp_dacs3.ui.screens.home
 
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.clickable
 import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.horizontalScroll
@@ -23,10 +24,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -35,6 +39,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.ui.components.RoundIconButton
 import com.example.chatapp_dacs3.ui.components.*
@@ -43,7 +48,8 @@ import com.example.chatapp_dacs3.ui.components.*
 
 @Composable
 fun HomeScreen(
-    openFriendChat:() -> Unit
+    viewModel: HomeViewModel,
+    openFriendChat:() -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -73,24 +79,19 @@ fun HomeScreen(
             }
         },
     ) { innerPadding ->
+        LaunchedEffect(true) {
+            viewModel.fetchStatusFriend()
+        }
         Column(
             modifier = Modifier
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState()),
         ) {
-            val friends = listOf(
-                Friend(R.drawable.newuser, "Nguyen Pđhuc"),
-                Friend(R.drawable.newuser, "MThuong"),
-                Friend(R.drawable.newuser, "TD"),
-                Friend(R.drawable.newuser, "WD de dfddfdfd"),
-                Friend(R.drawable.newuser, "Ton Lu De Tien"),
-                Friend(R.drawable.newuser, "May Co Biet Tao La Ai Khong"),
-                Friend(R.drawable.newuser, "PhucIs Me"),
-                Friend(R.drawable.newuser, "EEEEEE"),
-                Friend(R.drawable.newuser, "DDDDg"),
 
-            )
-            ListStatusMyFriend(friends)
+            viewModel.statusFriend?.let {
+                ListOfStatusFriend(it)
+            }
+
             ListMyChat(openFriendChat = openFriendChat)
         }
     }
@@ -185,7 +186,7 @@ fun OneChatFriend(
 ) {
     Row (modifier = Modifier
         .fillMaxWidth()
-        .clickable(){
+        .clickable() {
             openFriendChat()
         }
         .padding(start = 15.dp, end = 15.dp)
@@ -268,7 +269,7 @@ fun ListMyChat(
 }
 
 @Composable
-fun FriendList(friends: List<Friend>) {
+fun StatusFriend(friends: List<statusFriend>) {
     friends.forEach {friend->
         Column (modifier = Modifier
             .height(100.dp)
@@ -293,8 +294,8 @@ fun FriendList(friends: List<Friend>) {
 }
 
 @Composable
-fun ListStatusMyFriend(
-    friends: List<Friend>
+fun ListOfStatusFriend(
+    friends: List<statusFriend>
 ) {
     Row(modifier = Modifier
         .fillMaxWidth()
@@ -302,13 +303,16 @@ fun ListStatusMyFriend(
         .fillMaxWidth()
         .horizontalScroll(rememberScrollState())
     ) {
-        FriendList(friends = friends)
+        StatusFriend(friends = friends)
     }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Preview() {
-    HomeScreen (openFriendChat = {})
+    HomeScreen (
+        viewModel = viewModel(),
+        openFriendChat = {},
+    )
 }
 

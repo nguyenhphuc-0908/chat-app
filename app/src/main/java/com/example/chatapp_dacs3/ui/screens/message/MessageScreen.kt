@@ -20,8 +20,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TextField
@@ -36,20 +39,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.compose.ui.unit.sp
 import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.others.rememberImeState
-import com.example.chatapp_dacs3.ui.components.FriendMessage
 import com.example.chatapp_dacs3.ui.components.ImageMessage
-import com.example.chatapp_dacs3.ui.components.MyMessage
+import com.example.chatapp_dacs3.ui.components.Message
 import com.example.chatapp_dacs3.ui.components.RoundIconButton
 import com.example.chatapp_dacs3.ui.components.TextChat
-import com.example.chatapp_dacs3.ui.components.TextInput
+import com.example.chatapp_dacs3.ui.components.CustomTextField
 import com.example.chatapp_dacs3.ui.components.TextNameUser
+import com.example.chatapp_dacs3.ui.components.TextfieldChatbox
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -101,17 +105,22 @@ fun MessageScreen() {
             }
         },
     ) { innerPadding ->
+        val scrollState = rememberScrollState()
+
+        LaunchedEffect(Unit) {
+            scrollState.animateScrollTo(scrollState.maxValue)
+        }
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .verticalScroll(rememberScrollState()),
+                .verticalScroll(scrollState),
         ) {
-            MyMessage(message = "Hello! How are you")
-            FriendMessage(message = "Im fine")
-            MyMessage(message = "Hello!")
-            MyMessage(message = "Hello! you the fucking go wtf is it sdd dfdf kinch")
-            MyMessage(message = "Hello! you the fucking go wtf is it sdd dfdf kinch sdsd")
+            Message(message = "Hello! How are you",true)
+            Message(message = "Im fine",false)
+            Message(message = "Hello!",true)
+            Message(message = "Hello! you the fucking go wtf is it sdd dfdf kinch",true)
+            Message(message = "Hello! you the fucking go wtf is it sdd dfdf kinch sdsd",false)
             ImageMessage(R.drawable.avatar_garena_2,true)
             ImageMessage(R.drawable.avatar_garena_2,false)
 
@@ -131,7 +140,6 @@ fun TopBarMes(
         Row (
             modifier = Modifier
                 .fillMaxHeight()
-                .width(270.dp)
                 .clickable() {},
             verticalAlignment = Alignment.CenterVertically
         ){
@@ -184,25 +192,37 @@ fun BottomBarMes(
             imageResId = R.drawable.file,
             imageVector = null,
             modifier = Modifier
-                .size(47.dp)
+                .size(45.dp)
                 .rotate(15f)
         ) {
         }
-
-        Box(modifier = Modifier.width(220.dp)){
-            TextfieldChatbox(text = text)
-        }
+        CustomTextField(
+            leadingIcon = {
+            },
+            trailingIcon = null,
+            modifier = Modifier
+                .background(
+                    MaterialTheme.colorScheme.surface,
+                    RoundedCornerShape(percent = 20)
+                )
+                .padding(4.dp)
+                .width(200.dp)
+                .height(40.dp),
+            fontSize = 14.sp,
+            placeholderText = "Nhắn tin"
+        )
+//        TextfieldChatbox(text = text)
 
         RoundIconButton(
             imageResId = R.drawable.camera,
             imageVector = null,
-            modifier = Modifier.size(47.dp)
+            modifier = Modifier.size(45.dp)
         ) {
         }
         RoundIconButton(
             imageResId = R.drawable.mic,
             imageVector = null,
-            modifier = Modifier.size(47.dp)
+            modifier = Modifier.size(45.dp)
         ) {
         }
     }
@@ -210,42 +230,7 @@ fun BottomBarMes(
 
 
 
-@Composable
-fun TextfieldChatbox(
-    text: MutableState<String>,
-) {
-//    TextField(
-//        value = text.value,
-//        onValueChange = {
-//            text.value = it
-//        },
-//        shape = RoundedCornerShape(15.dp),
-//        modifier = Modifier
-//            .fillMaxHeight()
-//            .width(230.dp)
-//            .padding(vertical = 7.dp)
-//        ,
-//        colors = TextFieldDefaults.colors(
-//            focusedIndicatorColor = Color.Transparent,
-//            unfocusedIndicatorColor = Color.Transparent,
-//            ),
-//    )
-    TextField(
-        value = text.value,
-        onValueChange = {
-            text.value = it
-        },
-        modifier = Modifier
-            .width(220.dp),
-        shape = RoundedCornerShape(8.dp),
-        colors = TextFieldDefaults.colors(
-        focusedIndicatorColor =  Color.Transparent, //hide the indicator
-        unfocusedIndicatorColor = Color.Transparent
-        )
-    )
 
-
-}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
