@@ -29,47 +29,48 @@
 20-->[androidx.core:core:1.12.0] C:\Users\MSI PC\.gradle\caches\transforms-3\6f476f7e7b70cffb46c7a4a669fefe1e\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:5:5-26:19
+22-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:5:5-28:19
 23        android:allowBackup="true"
-23-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:6:9-35
+23-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:7:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 24-->[androidx.core:core:1.12.0] C:\Users\MSI PC\.gradle\caches\transforms-3\6f476f7e7b70cffb46c7a4a669fefe1e\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 25        android:dataExtractionRules="@xml/data_extraction_rules"
-25-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:7:9-65
+25-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:9:9-65
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:fullBackupContent="@xml/backup_rules"
-28-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:8:9-54
+28-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:10:9-54
 29        android:icon="@mipmap/ic_launcher"
-29-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:9:9-43
+29-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:11:9-43
 30        android:label="@string/app_name"
-30-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:10:9-41
+30-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:12:9-41
 31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:11:9-54
+31-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:13:9-54
 32        android:supportsRtl="true"
-32-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:12:9-35
-33        android:testOnly="true"
-34        android:theme="@style/Theme.ChatApp_DACS3" >
-34-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:13:9-51
+32-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:14:9-35
+33        android:theme="@style/Theme.ChatApp_DACS3"
+33-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:15:9-51
+34        android:windowSoftInputMode="adjustPan" >
+34-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:8:9-48
 35        <activity
-35-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:15:9-25:20
+35-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:17:9-27:20
 36            android:name="com.example.chatapp_dacs3.MainActivity"
-36-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:16:13-41
+36-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:18:13-41
 37            android:exported="true"
-37-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:17:13-36
+37-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:19:13-36
 38            android:label="@string/app_name"
-38-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:18:13-45
+38-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:20:13-45
 39            android:theme="@style/Theme.ChatApp_DACS3" >
-39-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:19:13-55
+39-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:21:13-55
 40            <intent-filter>
-40-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:20:13-24:29
+40-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:22:13-26:29
 41                <action android:name="android.intent.action.MAIN" />
-41-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:21:17-69
-41-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:21:25-66
+41-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:23:17-69
+41-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:23:25-66
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:23:17-77
-43-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:23:27-74
+43-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:25:17-77
+43-->C:\Users\MSI PC\AndroidStudioProjects\chat-app\app\src\main\AndroidManifest.xml:25:27-74
 44            </intent-filter>
 45        </activity>
 46

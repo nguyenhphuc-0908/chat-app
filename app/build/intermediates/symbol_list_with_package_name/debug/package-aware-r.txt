@@ -101,6 +101,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable avatar_garena_2
 drawable call
 drawable camera
 drawable chat_bubble

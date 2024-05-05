@@ -12,6 +12,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.chatapp_dacs3.ui.screens.home.HomeScreen
+import com.example.chatapp_dacs3.ui.screens.message.MessageScreen
 import com.example.chatapp_dacs3.ui.theme.ChatApp_DACS3Theme
 
 class MainActivity : ComponentActivity() {
@@ -35,7 +37,14 @@ fun Main() {
         ) {
             NavHost(navController = navController, startDestination = "home" ){
                 composable("home"){
-                    navController.navigate("friend")
+                    HomeScreen {
+                        navController.navigate("mesFriend")
+                    }
+                }
+                composable("mesFriend"){
+                    MessageScreen(
+
+                    )
                 }
 
             }
