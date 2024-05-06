@@ -1,46 +1,50 @@
 package com.example.chatapp_dacs3.ui.screens.home
 
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.chatapp_dacs3.R
+import com.example.chatapp_dacs3.model.LastFriend
+import com.example.chatapp_dacs3.model.StatusFriend
 
 
 class HomeViewModel : ViewModel() {
-    var statusFriend by mutableStateOf<List<statusFriend>?>(null)
+    var statusFriend by mutableStateOf<List<StatusFriend>?>(null)
         private set
-    var lastFriend by mutableStateOf<List<lastFriend>?>(null)
+    var lastFriend by mutableStateOf<List<LastFriend>?>(null)
         private set
     fun fetchStatusFriend() {
         val friends = listOf(
-            statusFriend(R.drawable.newuser, "Nguyen Phuc"),
-            statusFriend(R.drawable.newuser, "Mai Thuong"),
-            statusFriend(R.drawable.newuser, "Tran Dang"),
-            statusFriend(R.drawable.newuser, "Wong Da"),
-            statusFriend(R.drawable.newuser, "Ton Lu"),
-            statusFriend(R.drawable.newuser, "Tao La Ai"),
-            statusFriend(R.drawable.newuser, "Phuc Is Me"),
-            statusFriend(R.drawable.newuser, "EEEEEE"),
-            statusFriend(R.drawable.newuser, "DDDDg")
+            StatusFriend(R.drawable.newuser, "Nguyen Phuc"),
+            StatusFriend(R.drawable.newuser, "Mai Thuong"),
+            StatusFriend(R.drawable.newuser, "Tran Dang"),
+            StatusFriend(R.drawable.newuser, "Wong Da"),
+            StatusFriend(R.drawable.newuser, "Ton Lu"),
+            StatusFriend(R.drawable.newuser, "Tao La Ai"),
+            StatusFriend(R.drawable.newuser, "Phuc Is Me"),
+            StatusFriend(R.drawable.newuser, "EEEEEE"),
+            StatusFriend(R.drawable.newuser, "DDDDg")
         )
         statusFriend = friends
     }
 
     fun fetchLastFriend() {
         val friends = listOf(
-            statusFriend(R.drawable.newuser, "Nguyen Phuc"),
-            statusFriend(R.drawable.newuser, "Mai Thuong"),
-            statusFriend(R.drawable.newuser, "Tran Dang"),
-            statusFriend(R.drawable.newuser, "Wong Da"),
-            statusFriend(R.drawable.newuser, "Ton Lu"),
-            statusFriend(R.drawable.newuser, "Tao La Ai"),
-            statusFriend(R.drawable.newuser, "Phuc Is Me"),
-            statusFriend(R.drawable.newuser, "EEEEEE"),
-            statusFriend(R.drawable.newuser, "DDDDg")
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Ton Lu","Im a dog",0),
+            LastFriend(R.drawable.avatar_garena_2, "TDDDD",":)))))))))",32),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+            LastFriend(R.drawable.newuser, "Nguyen Phuc","Hello you are my teacher",34),
+
+
         )
-        statusFriend = friends
+        lastFriend = friends
     }
 }
 

@@ -1,6 +1,5 @@
 package com.example.chatapp_dacs3.ui.screens.home
 
-import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.clickable
 import com.example.chatapp_dacs3.ui.theme.Green1
 import androidx.compose.foundation.horizontalScroll
@@ -26,11 +25,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -41,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chatapp_dacs3.R
+import com.example.chatapp_dacs3.model.LastFriend
+import com.example.chatapp_dacs3.model.StatusFriend
 import com.example.chatapp_dacs3.ui.components.RoundIconButton
 import com.example.chatapp_dacs3.ui.components.*
 
@@ -81,6 +80,7 @@ fun HomeScreen(
     ) { innerPadding ->
         LaunchedEffect(true) {
             viewModel.fetchStatusFriend()
+            viewModel.fetchLastFriend()
         }
         Column(
             modifier = Modifier
@@ -91,8 +91,9 @@ fun HomeScreen(
             viewModel.statusFriend?.let {
                 ListOfStatusFriend(it)
             }
-
-            ListMyChat(openFriendChat = openFriendChat)
+            viewModel.lastFriend?.let {
+                ListMyChat(openFriendChat = openFriendChat,it)
+            }
         }
     }
 }
@@ -140,20 +141,11 @@ fun BottomBar() {
             painterResource(id = R.drawable.contacts),
             painterResource(id = R.drawable.settings)
         )
-        val isClicked = remember {
-            mutableStateListOf(false, false, false,false)
-        }
         for (i in 0 .. 3) {
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxHeight()
-                    .clickable() {
-                        for (j in 0..3) {
-                            isClicked[j] = false
-                        }
-                        isClicked[i] = true
-                    },
+                    .fillMaxHeight(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -161,13 +153,13 @@ fun BottomBar() {
                     painter = icons[i],
                     contentDescription = null,
                     tint =
-                    if (isClicked[i]) Green1
+                    if (i==0) Green1
                     else Color.Gray,
                     modifier = Modifier.size(37.dp)
                 )
                 Text(text = texts[i],style = TextStyle(fontSize = 10.sp)
                     , color =
-                    if (isClicked[i]) Green1
+                    if (i==0) Green1
                     else Color.Gray,
                 )
             }
@@ -249,19 +241,20 @@ fun TimeAgoChat(
 
 @Composable
 fun ListMyChat(
-    openFriendChat: () -> Unit
+    openFriendChat: () -> Unit,
+    friends: List<LastFriend>
 ) {
     Column (
         modifier = Modifier
             .fillMaxSize()
             .padding()
     ){
-        for(i in 0..10){
+        friends.forEach {friend->
         OneChatFriend(
-            avatar = R.drawable.newuser,
-            name = "Phuc is Me",
-            lastMessage = "Wtf, you are",
-            lastTimeMessage = "34",
+            avatar = friend.avatar,
+            name = friend.name,
+            lastMessage = friend.lastMessage,
+            lastTimeMessage = friend.timeAgo.toString(),
             openFriendChat = openFriendChat
             )
         }
@@ -269,7 +262,9 @@ fun ListMyChat(
 }
 
 @Composable
-fun StatusFriend(friends: List<statusFriend>) {
+fun StatusFriend(
+    friends: List<StatusFriend>
+) {
     friends.forEach {friend->
         Column (modifier = Modifier
             .height(100.dp)
@@ -295,7 +290,7 @@ fun StatusFriend(friends: List<statusFriend>) {
 
 @Composable
 fun ListOfStatusFriend(
-    friends: List<statusFriend>
+    friends: List<StatusFriend>
 ) {
     Row(modifier = Modifier
         .fillMaxWidth()
