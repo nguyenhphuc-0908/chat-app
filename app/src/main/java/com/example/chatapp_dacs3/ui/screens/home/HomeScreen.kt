@@ -209,7 +209,7 @@ fun OneChatFriend(
             Row (
                 modifier = Modifier
                     .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
+                verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
 
             ){
