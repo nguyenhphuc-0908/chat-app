@@ -13,6 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ChatApp_DACS3"
-include(":app")
- 
+rootProject.name = "ChatApp"
+include(":ChatApp")
