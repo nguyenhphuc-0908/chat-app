@@ -1,5 +1,6 @@
 package com.example.chatapp_dacs3.ui.screens.message
 
+<<<<<<< HEAD
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -34,4 +35,7 @@ class MessageViewModel : ViewModel(){
     fun insertMes(message: Message){
         myRef.setValue("Hello, World!")
     }
+=======
+class MessageViewModel {
+>>>>>>> f03ef64700f47ec7a6d9f7ed0f01e71b7cf0efe5
 }

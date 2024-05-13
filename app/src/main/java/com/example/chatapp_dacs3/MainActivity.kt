@@ -158,8 +158,6 @@ sealed class Destination(val route: String){
 }
 
 
-
-
 @Preview(showBackground = true)
 @Composable
 fun Preview() {

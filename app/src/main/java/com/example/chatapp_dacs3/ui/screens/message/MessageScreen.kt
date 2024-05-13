@@ -29,6 +29,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -85,6 +86,7 @@ fun MessageScreen(
                         modifier = Modifier
                             .fillMaxHeight(),
                         onClick = popBackStack,
+
                     )
                 }
             )
@@ -156,7 +158,6 @@ fun MessageListWithAFriend(
 
 @Composable
 fun TopBarMes(
-
 ) {
     Row (modifier = Modifier
         .fillMaxWidth()
@@ -263,8 +264,6 @@ fun BottomBarMes(
         }
     }
 }
-
-
 
 
 

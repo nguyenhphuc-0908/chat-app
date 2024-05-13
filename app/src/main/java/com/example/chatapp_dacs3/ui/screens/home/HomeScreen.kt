@@ -24,14 +24,19 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+<<<<<<< HEAD
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chatapp_dacs3.R
 import com.example.chatapp_dacs3.model.User
@@ -84,7 +89,6 @@ fun HomeScreen(
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState()),
         ) {
-
             viewModel.statusFriend?.let {
                 ListOfStatusFriend(it)
             }
@@ -101,6 +105,7 @@ fun TopBar(
     openSearch: () -> Unit,
     openMyinfo: () -> Unit,
     ) {
+
     Row (
         modifier = Modifier
             .fillMaxSize()
@@ -174,7 +179,6 @@ fun OneChatFriend(
                     .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
-
             ){
                 TextNameUser(name)
                 TimeAgoChat(lastTimeMessage)
@@ -230,6 +234,7 @@ fun ListMyChat(
 fun StatusFriend(
     friends: List<User>
 ) {
+
     friends.forEach {friend->
         Column (modifier = Modifier
             .height(100.dp)
@@ -256,6 +261,7 @@ fun StatusFriend(
 @Composable
 fun ListOfStatusFriend(
     friends: List<User>
+
 ) {
     Row(modifier = Modifier
         .fillMaxWidth()
@@ -276,5 +282,6 @@ fun Preview() {
         openSearch = {},
         openMyinfo = {}
     )
+
 }
 
